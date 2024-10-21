@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="menu">
+    <div class="container-fluid">
+        <%= link_to 'The Rial News ', news_index_path, class: 'navbar-brand' %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <%= link_to 'New Nwes', new_news_path, class: 'nav-link'%>
+                </li>
+            </ul>
+            <ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Acceso</a>
+                    <% if user_signed_in? %>
+                        <% if current_user.email %>
+                            Hola <%= current_user.email %>
+                        <% end %>
+                    <% else %>
+                        Dale registrate o conectate
+                    <% end %>
+                    <ul class="dropdown-menu">
+                        <% if user_signed_in? %>
+                            <li><a class="dropdown-item" href="#"><%= link_to 'Edit', edit_user_registration_path, class: 'nav-link'%></a></li>
+                            <li><%= button_to 'Cerrar sesión', destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>
+                        <% else %>
+                            <li><a class="dropdown-item" href="#"><%= link_to 'Login', new_user_session_path, class: 'nav-link'%></a></li>
+                            <li><a class="dropdown-item" href="#"><%= link_to 'Register', new_user_registration_path, class: 'nav-link'%></a></li>
+                        <% end%>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
