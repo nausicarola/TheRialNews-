@@ -1,24 +1,24 @@
-# README
+Desafío - Mecanismos de autenticación y control de accesos en una aplicación web
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Modulo 6
 
-Things you may want to cover:
+Alumna Carola Pulgar soto
 
-* Ruby version
+Cambia email y contraseña en el archivo application.yml  para la generacion del reenvio de la contraseña si al usuario se le olvida esta
 
-* System dependencies
+Requerimientos
+1. Set-up inicial del proyecto con sus relaciones y modelos.
+2. Agregar roles a los usuarios con sus permisos.
+3. Si un usuario olvida su contraseña, puede recibir un email para restablecerla.
+4. Las noticias deben tener sus tests funcionales.
 
-* Configuration
 
-* Database creation
+Gemas
 
-* Database initialization
+se usaron las gemas  devise, bootstrap, figaro.
 
-* How to run the test suite
+se crea nav bar de navegacion para ingreso de usuarios
 
-* Services (job queues, cache servers, search engines, etc.)
+los roles son Admin y User
 
-* Deployment instructions
-
-* ...
+Se crea la parte de test funcionales
